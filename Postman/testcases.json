@@ -1,0 +1,274 @@
+{
+	"info": {
+		"_postman_id": "e93fe221-0a45-496c-9f5a-97c329af52ff",
+		"name": "Demo_1",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "33961082"
+	},
+	"item": [
+		{
+			"name": "get",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"//1、json提取（从responseBody中提取）\r",
+							"//打印responseBody的返回值\r",
+							"//console.log(responseBody);\r",
+							"//使用json提取器把responseBody返回值转化成一个json对象\r",
+							"//var用来定义变量\r",
+							"//var jsonData = JSON.parse(responseBody);\r",
+							"//提取access_token并且设置为全局变量\r",
+							"//pm.globals.set(\"access_token\", jsonData.access_token);\r",
+							"//console.log(jsonData.access_token);\r",
+							"\r",
+							"//2、正则表达式提取（从responseBody中提取）\r",
+							"//var token = responseBody.match(new RegExp('\"access_token\":\"(.*?)\"'));\r",
+							"//console.log(token[1]);\r",
+							"//pm.globals.set(\"access_token\", token[1]);\r",
+							"\r",
+							"//3、从Headers中提取\r",
+							"//var types = postman.getResponseHeader(\"content-Type\")\r",
+							"//console.log(types)\r",
+							"\r",
+							"//4、从Cookie中提取\r",
+							"//var csrf_token = postman.getResponseCookie('csrf_token');\r",
+							"//console.log(csrf_token.value);\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://47.107.116.139/phpwind",
+					"protocol": "http",
+					"host": [
+						"47",
+						"107",
+						"116",
+						"139"
+					],
+					"path": [
+						"phpwind"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "post",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"//自定义的时间戳\r",
+							"var times = Date.now();\r",
+							"pm.globals.set(\"times\",times);\r",
+							"//让接口请求停留3秒\r",
+							"const sleep = (milliseconds) => {\r",
+							"   const start = Date.now();\r",
+							"   while (Date.now() <= start + milliseconds){}\r",
+							"};\r",
+							"sleep(3000);\r",
+							"console.log(\"sleep 3s before\")"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"//让接口请求停留3秒\r",
+							"const sleep = (milliseconds) => {\r",
+							"    const start = Date.now();\r",
+							"    while (Date.now() <= start + milliseconds){}\r",
+							"};\r",
+							"sleep(3000);\r",
+							"console.log(\"sleep 3s after\");\r",
+							"\r",
+							"//断言\r",
+							"var tag_id = responseBody.match(new RegExp('\"id\":(.*?),'))\r",
+							"pm.globals.get(\"tag_id\",tag_id[1]);\r",
+							"// var tag_id = responseBody.match(new RegExp('\"name\":(.*?)'))\r",
+							"// pm.globals.get(\"tag_id\",tag_id);\r",
+							"//断言返回吗为200\r",
+							"pm.test(\"Status code is 200\", function () {\r",
+							"pm.response.to.have.status(200);\r",
+							"});\r",
+							"//断言返回结果中包含指定的字符串\r",
+							"pm.test(\"Body matches string\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"liney_\"+pm.globals.get(\"times\"));\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"tag\":{\"name\":\"liney_{{times}}\"}}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://{{ip}}/cgi-bin/tags/create?access_token={{access_token}}",
+					"protocol": "https",
+					"host": [
+						"{{ip}}"
+					],
+					"path": [
+						"cgi-bin",
+						"tags",
+						"create"
+					],
+					"query": [
+						{
+							"key": "access_token",
+							"value": "{{access_token}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "百度搜索接口",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "host",
+						"value": " gimg3.baidu.com",
+						"type": "text"
+					},
+					{
+						"key": "pragma",
+						"value": " no-cache",
+						"type": "text"
+					},
+					{
+						"key": "cache-control",
+						"value": " no-cache",
+						"type": "text"
+					},
+					{
+						"key": "sec-ch-ua",
+						"value": " \"Google Chrome\";v=\"123\", \"Not:A-Brand\";v=\"8\", \"Chromium\";v=\"123\"",
+						"type": "text"
+					},
+					{
+						"key": "sec-ch-ua-mobile",
+						"value": " ?0",
+						"type": "text"
+					},
+					{
+						"key": "user-agent",
+						"value": " Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "sec-ch-ua-platform",
+						"value": " \"Windows\"",
+						"type": "text"
+					},
+					{
+						"key": "accept",
+						"value": " image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8",
+						"type": "text"
+					},
+					{
+						"key": "sec-fetch-site",
+						"value": " same-site",
+						"type": "text"
+					},
+					{
+						"key": "sec-fetch-mode",
+						"value": " no-cors",
+						"type": "text"
+					},
+					{
+						"key": "sec-fetch-dest",
+						"value": " image",
+						"type": "text"
+					},
+					{
+						"key": "referer",
+						"value": " https://www.baidu.com/s?ie=utf-8&f=8&rsv_bp=1&rsv_idx=1&tn=baidu&wd=%E7%9F%A5%E4%B9%8E&fenlei=256&rsv_pq=0x8a04d0b100192c67&rsv_t=680e7fJiPK81ZsFvceuRHzmdI%2BGf0NuwlASStzMGeb4JOY9Lr1AQ7nZD9fxW&rqlang=en&rsv_dl=tb&rsv_enter=0&rsv_sug3=9&rsv_sug1=3&rsv_sug7=100&rsv_btype=i&prefixsug=%25E7%259F%25A5%25E4%25B9%258E&rsp=2&inputT=5755&rsv_sug4=8157&rsv_jmp=fail&p_tk=6811wEEP7PMCbVOQ8rrB83%2BD82M6VjBYRQjHsLUfkxjlB87ZTUFrw%2FdgwxNVMLypTD2HUMipaP5%2BLIj6RaTI8BDDi5cbhe%2FPEb5%2BTqvbPJ6vLqPbNL1UIfhD%2FV29bHyubCK3Xe4YegqYd8ODMHmSHMh6FRjPkMKoKYgy7Oy1Nz4zRrg%3D&p_timestamp=1711849510&p_sign=5abccedff6400c1da47a15f2b60527af&p_signature=6d14d6ef4686dde1356ea2164b23e733&__pc2ps_ab=6811wEEP7PMCbVOQ8rrB83%2BD82M6VjBYRQjHsLUfkxjlB87ZTUFrw%2FdgwxNVMLypTD2HUMipaP5%2BLIj6RaTI8BDDi5cbhe%2FPEb5%2BTqvbPJ6vLqPbNL1UIfhD%2FV29bHyubCK3Xe4YegqYd8ODMHmSHMh6FRjPkMKoKYgy7Oy1Nz4zRrg%3D|1711849510|6d14d6ef4686dde1356ea2164b23e733|5abccedff6400c1da47a15f2b60527af",
+						"type": "text"
+					},
+					{
+						"key": "accept-encoding",
+						"value": " gzip, deflate, br, zstd",
+						"type": "text"
+					},
+					{
+						"key": "accept-language",
+						"value": " zh-CN,zh;q=0.9",
+						"type": "text"
+					},
+					{
+						"key": "cookie",
+						"value": " BIDUPSID=AE15EDF3C43F43C492E8DD788CF39BB2; PSTM=1711849486; H_PS_PSSID=40079_40369_40379_40398_40416_40298_40464_40458_40470_40480_39662_40488_40511_40513_60025_60031_60046_60058; BAIDUID=AE15EDF3C43F43C492E8DD788CF39BB2:FG=1; BAIDUID_BFESS=AE15EDF3C43F43C492E8DD788CF39BB2:FG=1; BA_HECTOR=200ga52524a101050420a40kc2o57m1j0hg0h1s; ZFY=DabMTLv:AJlqffb1MOQEB9PKXBAw3a:A6h8B:BgbxlhpB4:C; BDORZ=B490B5EBF6F3CD402E515D22BCDA1598; delPer=0; PSINO=6; kleck=10723a4a411e87997f8dc74bdc20a8f4",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://www.baidu.com/s?ie=utf-8&f=8&rsv_bp=1&rsv_idx=1&tn=baidu&wd=%E7%9F%A5%E4%B9%8E",
+					"protocol": "https",
+					"host": [
+						"www",
+						"baidu",
+						"com"
+					],
+					"path": [
+						"s"
+					],
+					"query": [
+						{
+							"key": "ie",
+							"value": "utf-8"
+						},
+						{
+							"key": "f",
+							"value": "8"
+						},
+						{
+							"key": "rsv_bp",
+							"value": "1"
+						},
+						{
+							"key": "rsv_idx",
+							"value": "1"
+						},
+						{
+							"key": "tn",
+							"value": "baidu"
+						},
+						{
+							"key": "wd",
+							"value": "%E7%9F%A5%E4%B9%8E"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
