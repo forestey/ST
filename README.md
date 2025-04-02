@@ -1,2 +1,2 @@
 # ST
-This is study project
+This is learning project
