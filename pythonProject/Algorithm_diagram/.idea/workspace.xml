@@ -4,19 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bc794057-e5c8-4a8a-9f71-a245cfcaecdd" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/Algorithm_diagram.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Chapter_one/binary_search.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Chapter_two/selection_sort.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Data_Structures_and_Algorithms_in_python/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Data_Structures_and_Algorithms_in_python/Chapter_One/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="bc794057-e5c8-4a8a-9f71-a245cfcaecdd" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -105,7 +93,7 @@
       <updated>1740047456062</updated>
       <workItem from="1740047457382" duration="25000" />
       <workItem from="1744092975751" duration="3398000" />
-      <workItem from="1744107500227" duration="2173000" />
+      <workItem from="1744107500227" duration="2993000" />
     </task>
     <servers />
   </component>
