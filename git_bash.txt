@@ -15,7 +15,7 @@ git config --global user.name "你的用户名"
 git config --global user.email "你的邮箱地址"
 
 7）配置SSHkey
-ssh-keygen -t rsa -C "自己的邮箱"
+ssh-keygen -t rsa -C "280849818@qq.com"
 
 8）安装Git
 官网： https://git-scm.com/downloads
