@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="157c8ee6-c039-4d15-86e9-f1df673f261e" name="Changes" comment="" />
+    <list default="true" id="157c8ee6-c039-4d15-86e9-f1df673f261e" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../Algorithm_diagram/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Algorithm_diagram/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Algorithm_diagram/Chapter_one/binary_search.py" beforeDir="false" afterPath="$PROJECT_DIR$/../Algorithm_diagram/Chapter_one/binary_search.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -35,7 +39,7 @@
     "RunOnceActivity.git.unshallow": "true",
     "git-widget-placeholder": "main",
     "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "F:/ST/ST_Git/pythonProject/Algorithm_diagram",
+    "last_opened_file_path": "F:/ST/ST_Git/pythonProject/Data_Structures_and_Algorithms_in_python",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -95,6 +99,7 @@
       <workItem from="1743643431343" duration="1601000" />
       <workItem from="1743994556854" duration="1523000" />
       <workItem from="1744092385306" duration="588000" />
+      <workItem from="1744243271443" duration="3728000" />
     </task>
     <servers />
   </component>
