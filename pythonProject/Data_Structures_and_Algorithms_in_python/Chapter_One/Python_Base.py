@@ -36,60 +36,104 @@
 # # 每次打印都默认以换行符结尾，可以通过设置实际参数end来更改以什么结尾，以下输出的结果是Hello World***，以***结尾
 # print('Hello', 'World', end='***')
 
-# 格式化字符串
-aName = 'Kevin'
-age = 23
-# %是字符串运算符，称作格式化运算符
-# d和i都表示输出格式为整数
-print("%s is %d years old." % (aName, age))
-print("%s is %i years old." % (aName, age))
-
-# u:无符号整数
-print("%s is %u years old." % (aName, age))
-
-price = 24
-item = 'banana'
-print("The %s costs %d cents" % (item, price))
-# %+10s:将值放在10个字符宽的区域中，%5.2f：将值放在5个字符宽的区域中，并且保留小数点后2位
-print("The %+10s costs %5.2f cents" % (item, price))
-print("The %+10s costs %10.2f cents" % (item, price))
-
-# (name):%（name)d从字典中获取name键对应的值
-item_dict = {"item":"banana", "cost":24}
-print("The %(item)s cost %(cost)7.1f cents" % item_dict)
-
-# format方法
-print("The {} costs {} cents".format(item, price))
-print("The {:s} costs {:d} cents".format(item, price))
-
-# python3.6引入了f-strings，可以利用变量名来代替点位符。
-print(f"The {item} costs {price} cents")
-print(f"The {item:10} costs {price:10.2f} cents")
-
-# 控制结构
-
-
+# # 格式化字符串
+# aName = 'Kevin'
+# age = 23
+# # %是字符串运算符，称作格式化运算符
+# # d和i都表示输出格式为整数
+# print("%s is %d years old." % (aName, age))
+# print("%s is %i years old." % (aName, age))
+#
+# # u:无符号整数
+# print("%s is %u years old." % (aName, age))
+#
+# price = 24
+# item = 'banana'
+# print("The %s costs %d cents" % (item, price))
+# # %+10s:将值放在10个字符宽的区域中，%5.2f：将值放在5个字符宽的区域中，并且保留小数点后2位
+# print("The %+10s costs %5.2f cents" % (item, price))
+# print("The %+10s costs %10.2f cents" % (item, price))
+#
+# # (name):%（name)d从字典中获取name键对应的值
+# item_dict = {"item":"banana", "cost":24}
+# print("The %(item)s cost %(cost)7.1f cents" % item_dict)
+#
+# # format方法
+# print("The {} costs {} cents".format(item, price))
+# print("The {:s} costs {:d} cents".format(item, price))
+#
+# # python3.6引入了f-strings，可以利用变量名来代替点位符。
+# print(f"The {item} costs {price} cents")
+# print(f"The {item:10} costs {price:10.2f} cents")
+#
+# # 控制结构
+# # while语句
+# counter = 1
+# while counter <= 5:
+#     print("Hello world")
+#     counter += 1
+#
+# # for语句
+# for item in [1, 3, 6, 2, 5]:
+#     print(item)
+#
+# for item in range(5):
+#     print(item**2)
+#
+# word_list = ['cat', 'dog', 'rabbit']
+# letter_list = []
+# for a_word in word_list:
+#     for a_letter in a_word:
+#         letter_list.append(a_letter)
+# print(letter_list)
+#
+# # 分支语句
+import math
+# n=16
+# if n < 0:
+#     print("Sorry, value is negative")
+# else:
+#     print(math.pow(n,2))
+#     print(math.sqrt(n))
+#
 # # 列表解析式
 # sqlist = []
 # for x in range(1,11):
 #     sqlist.append(x*x)
 # print(sqlist)
-# # 可以一行代码来完成
+# # 使用列表解析式可以一行代码来完成
 # sqlist = [x*x for x in range(1,20)]
 # print(sqlist)
-#
 # sqlist = [x*x for x in range(1,20) if x%2 !=0]
 # print(sqlist)
 #
-# # 牛顿迭代法
-# def square_root(n):
-#     root = n/2
-#     for k in range(20):
-#         root = (1/2)*(root+(n/root))
-#
-#     return root
-#
-# print(square_root(9))
+# #try...except异常处理
+# a_number = int(input("Enter an integer: "))
+# try:
+#     print(math.sqrt(a_number))
+# except:
+#     print("Bad value for the square root function")
+#     print("Using the absolute value instead")
+#     print(math.sqrt(abs(a_number)))
+
+# # raise语句触发异常
+# if a_number < 0:
+#     raise RuntimeError("You can't use a negative number")
+# else:
+#     print(math.sqrt(a_number))
+
+
+
+# 函数
+# 牛顿迭代法
+def square_root(n):
+    root = n/2 # 初次猜测平方根是n/2
+    for k in range(20):
+        root = (1/2)*(root + (n / root))
+
+    return root
+
+print(square_root(5))
 # 第一章：编程练习
 # 1.实现简单的方法getNum和getDen ，它们分别返回分数的分子和分母。
 # class Fraction:
