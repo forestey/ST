@@ -126,14 +126,226 @@ import math
 
 # 函数
 # 牛顿迭代法
-def square_root(n):
-    root = n/2 # 初次猜测平方根是n/2
-    for k in range(20):
-        root = (1/2)*(root + (n / root))
+# def square_root(n):
+#     root = n/2 # 初次猜测平方根是n/2
+#     for k in range(20):
+#         root = (1/2)*(root + (n / root))
+#
+#     return root
+#
+# print(square_root(5))
 
-    return root
+# 类
+# class Fraction:
+#     def __init__(self, top, bottom):
+#         # 构造方法定义
+#         self.num = top
+#         self.den = bottom
+#
+#     def show(self):
+#         print(f"{self.num}/{self.den}")
+#
+# my_fraction = Fraction(3,5)
+# my_fraction.show()
 
-print(square_root(5))
+# 重构方法
+# __str__重写
+# class Fraction:
+#     def __init__(self, top, bottom):
+#         # 构造方法定义
+#         self.num = top
+#         self.den = bottom
+#
+#     def __str__(self):
+#         return f"{self.num}/{self.den}"
+#
+# my_fraction = Fraction(3,5)
+# print(my_fraction.__str__())
+# print(my_fraction)
+
+# __add__重写
+# class Fraction:
+#     def __init__(self, top, bottom):
+#         # 构造方法定义
+#         self.num = top
+#         self.den = bottom
+#
+#     def __str__(self):
+#         return f"{self.num}/{self.den}"
+#
+#     def __add__(self, other_fraction):
+#         new_num = self.num * other_fraction.den + self.den * other_fraction.num
+#         new_den = other_fraction.den * self.den
+#         return Fraction(new_num, new_den)
+# f1 = Fraction(1,4)
+# f2 = Fraction(1,2)
+# print(f1)
+# print(f2)
+# print(f1+f2)
+
+# 最大公因数GCD
+# def gcd(m, n):
+#     while m % n != 0:
+#         m, n = n, m % n
+#     return n
+#
+# class Fraction:
+#     def __init__(self, top, bottom):
+#         # 构造方法定义
+#         self.num = top
+#         self.den = bottom
+#
+#     def __str__(self):
+#         return f"{self.num}/{self.den}"
+#
+#     def __add__(self, other_fraction):
+#         new_num = self.num * other_fraction.den + self.den * other_fraction.num
+#         new_den = other_fraction.den * self.den
+#         cmmn = gcd(new_num, new_den)
+#         return Fraction(new_num//cmmn, new_den//cmmn)
+#
+# f1 = Fraction(1,4)
+# f2 = Fraction(1,2)
+# print(f1)
+# print(f2)
+# print(f1+f2)
+
+# __eq__重写
+# def gcd(m, n):
+#     while m % n != 0:
+#         m, n = n, m % n
+#     return n
+#
+# class Fraction:
+#     def __init__(self, top, bottom):
+#         # 构造方法定义
+#         self.num = top
+#         self.den = bottom
+#
+#     def __str__(self):
+#         return f"{self.num}/{self.den}"
+#
+#     def __add__(self, other_fraction):
+#         new_num = self.num * other_fraction.den + self.den * other_fraction.num
+#         new_den = other_fraction.den * self.den
+#         cmmn = gcd(new_num, new_den)
+#         return Fraction(new_num//cmmn, new_den//cmmn)
+#
+#     def __eq__(self, other_fraction):
+#         first_num = self.num * other_fraction.den
+#         second_num = self.den * other_fraction.num
+#         return first_num == second_num
+#
+#
+#     def show(self):
+#         print(f"{self.num}/{self.den}")
+#
+# f1 = Fraction(1,4)
+# f2 = Fraction(2,8)
+# print(f1)
+# print(f2)
+# print(f1+f2)
+# print(f1.__eq__(f2))
+
+# 继承类
+# class LogicGate:
+#     def __init__(self, lbl):
+#         self.label = lbl
+#         self.output = None
+#
+#     def get_label(self):
+#         return self.label
+#
+#     def get_output(self):
+#         self.output = self.perform_gate_logic()
+#         return self.output
+#
+# class BinaryGate(LogicGate):
+#     def __init__(self, lbl):
+#         super().__init__(lbl)
+#         self.pin_a = None
+#
+#     def get_pin_a(self):
+#         if self.pin_a is None:
+#             return int(input(f"Enter pin A input for gate {self.get_label()}: "))
+#         else:
+#             return self.pin_a.get_from().get_output()
+#
+#     def get_pin_b(self):
+#         return int(input(f"Enter pin B input for gate {self.get_label()}: "))
+#
+# class UnaryGate(LogicGate):
+#     def __init__(self, lbl):
+#         super().__init__(lbl)
+#         self.pin = None
+#
+#     def get_pin(self):
+#         return int(input(f"Enter pin input for gate {self.get_label()}: "))
+#
+# class AndGate(BinaryGate):
+#     def __init__(self, lbl):
+#         super().__init__(lbl)
+#
+#     def perform_gate_logic(self):
+#         a = self.get_pin_a()
+#         b = self.get_pin_b()
+#         if a == 1 and b == 1:
+#             return 1
+#         else:
+#             return 0
+# # g1 = AndGate("G1")
+# # print(g1.get_output())
+#
+# class OrGate(BinaryGate):
+#     def __init__(self, lbl):
+#         super().__init__(lbl)
+#
+#     def perform_gate_logic(self):
+#         a = self.get_pin_a()
+#         b = self.get_pin_b()
+#         if a == 0 and b == 0:
+#             return 0
+#         else:
+#             return 1
+# # g2 = OrGate("G2")
+# # print(g2.get_output())
+#
+# class NotGate(UnaryGate):
+#     def __init__(self, lbl):
+#         super().__init__(lbl)
+#
+#     def perform_gate_logic(self):
+#         a = self.get_pin()
+#
+#         if a == 1:
+#             return 0
+#         elif a == 0:
+#             return 1
+# g3 = NotGate("G3")
+# print(g3.get_output())
+#
+# class Connector:
+#     def __init__(self, fgate, tgate):
+#         self.from_gate = fgate
+#         self.to_gate = tgate
+#         tgate.set_next_pin(self)
+#
+#     def get_from(self):
+#         return self.from_gate
+#
+#     def get_to(self):
+#         return self.to_gate
+#
+# def set_next_pin(self, source):
+#     if self.pin_a is None:
+#         self.pin_a = source
+#     else:
+#         if self.pin_b is None:
+#             self.pin_b = source
+#         else:
+#             raise RuntimeError("Error: NO EMPTY PINS")
+
+
 # 第一章：编程练习
 # 1.实现简单的方法getNum和getDen ，它们分别返回分数的分子和分母。
 # class Fraction:
@@ -146,7 +358,7 @@ print(square_root(5))
 #
 #     def getDen(self):
 #         return self.den
-
+#
 # fractions = Fraction(3,5)
 # print(fractions.getNum())
 # print(fractions.getDen())
@@ -163,43 +375,52 @@ print(square_root(5))
 #                 self.den //= i
 #                 print(self.num, self.den)
 #
-# fractions = Fraction(8, 16)
+#     def __str__(self):
+#         return f"{self.num} {self.den}"
+#
+# fractions = Fraction(15, 225)
 # print(fractions)
 
 # 3.实现下列简单的算术运算：sub 、mul 和__truediv__ 。
 # 魔法方法
-# class SubTest(object):
-#     def __init__(self, age):
-#         self.age = age
-#
-#     def __sub__(self, other):
-#         print('call sub magic function')
-#         return SubTest(self.age - other.age)
-# num_1 = SubTest(18)
-# num_2 = SubTest(10)
-# print(f'sub result is:{(num_1 - num_2).age}')
+class SubTest(object):
+    def __init__(self, age):
+        self.age = age
 
-# class Fraction:
-#     def __init__(self, top, bottom):
-#         self.num = top
-#         self.den = bottom
-#
-#     def __sub__(self, other):
-#         newnum = self.num * other.den - self.den * other.num
-#         newden = self.den * other.den
-#         print('newnum=', newnum)
-#         print('newden=', newden)
-#         return Fraction(newnum, newden)
-#
-#     def __mul__(self, other):
-#         newnum = self.num * other.num
-#         newden = self.den * other.den
-#         return Fraction(newnum, newden)
-#
-#     def __truediv__(self, other):
-#         newnum = self.num * other.num
-#         newden = self.den * other.den
-#         return Fraction(newnum, newden)
+    def __sub__(self, other):
+        print('call sub magic function')
+        return SubTest(self.age - other.age)
+    def __str__(self):
+        return f"{self.age}"
+
+num_1 = SubTest(18)
+num_2 = SubTest(10)
+print(num_1)
+print(num_2)
+print(num_1 - num_2)
+# print(f"sub result is:{(num_1 - num_2).age}")
+
+class Fraction:
+    def __init__(self, top, bottom):
+        self.num = top
+        self.den = bottom
+
+    def __sub__(self, other):
+        new_num = self.num * other.den - self.den * other.num
+        new_den = self.den * other.den
+        print('new num=', new_num)
+        print('new den=', new_den)
+        return Fraction(new_num, new_den)
+
+    def __mul__(self, other):
+        new_num = self.num * other.num
+        new_den = self.den * other.den
+        return Fraction(new_num, new_den)
+
+    def __truediv__(self, other):
+        new_num = self.num * other.num
+        new_den = self.den * other.den
+        return Fraction(new_num, new_den)
 #
 # # 4.实现下列关系运算：gt 、ge 、lt 、le 和__ne__ 。
 #     def __gt__(self, other):

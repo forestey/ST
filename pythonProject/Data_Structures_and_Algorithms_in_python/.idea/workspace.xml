@@ -7,6 +7,7 @@
     <list default="true" id="157c8ee6-c039-4d15-86e9-f1df673f261e" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Chapter_One/Python_Base.py" beforeDir="false" afterPath="$PROJECT_DIR$/Chapter_One/Python_Base.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Chapter_Two/Algorithm_analysis.py" beforeDir="false" afterPath="$PROJECT_DIR$/Chapter_Two/Algorithm_analysis.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,7 +50,7 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
-  <component name="RunManager" selected="Python.Python_Base">
+  <component name="RunManager" selected="Python.Algorithm_analysis">
     <configuration name="Algorithm_analysis" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Data_Structures_and_Algorithms_in_python" />
       <option name="ENV_FILES" value="" />
@@ -98,8 +99,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.Python_Base" />
         <item itemvalue="Python.Algorithm_analysis" />
+        <item itemvalue="Python.Python_Base" />
       </list>
     </recent_temporary>
   </component>
@@ -128,6 +129,8 @@
       <workItem from="1744271158076" duration="2820000" />
       <workItem from="1744274169868" duration="270000" />
       <workItem from="1744281733525" duration="3622000" />
+      <workItem from="1744340432877" duration="11958000" />
+      <workItem from="1744418606507" duration="6618000" />
     </task>
     <servers />
   </component>
@@ -135,7 +138,7 @@
     <option name="version" value="3" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/Data_Structures_and_Algorithms_in_python$Python_Base.coverage" NAME="Python_Base Coverage Results" MODIFIED="1744284778897" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Chapter_One" />
-    <SUITE FILE_PATH="coverage/Data_Structures_and_Algorithms_in_python$Algorithm_analysis.coverage" NAME="Algorithm_analysis Coverage Results" MODIFIED="1743644880417" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Chapter_Two" />
+    <SUITE FILE_PATH="coverage/Data_Structures_and_Algorithms_in_python$Python_Base.coverage" NAME="Python_Base Coverage Results" MODIFIED="1744360323226" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Chapter_One" />
+    <SUITE FILE_PATH="coverage/Data_Structures_and_Algorithms_in_python$Algorithm_analysis.coverage" NAME="Algorithm_analysis Coverage Results" MODIFIED="1744425169555" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Chapter_Two" />
   </component>
 </project>
