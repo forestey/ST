@@ -74,4 +74,36 @@
 #
 # print(binary_search_rec(a_list=range(1, 256), item=random.randint(1,256)))
 
-# 散列
+# 散列函数（哈希表）
+
+# 冒泡排序
+def bubble_sort(a_list):
+    for i in range(len(a_list)-1, 0 , -1):
+        for j in range(i):
+            if a_list[j] > a_list[j+1]:
+                # a_list[j], a_list[j+1] = a_list[j+1], a_list[j]
+                temp = a_list[j]
+                a_list[j] = a_list[j+1]
+                a_list[j+1] = temp
+
+# 选择排序
+def selection_sort(a_list):
+    for i, item in enumerate(a_list):
+        min_index = len(a_list)-1
+        for j in range(i, len(a_list)):
+            if a_list[j] < a_list[min_index]:
+                min_index = j
+        if min_index != i:
+            a_list[min_index], a_list[i] = a_list[i], a_list[min_index]
+
+# 插入排序
+def insertion_sort(a_list):
+    for i in range(1, len(a_list)):
+        cur_val = a_list[i]
+        cur_pos = i
+        while cur_pos > 0 and a_list[cur_pos - 1] > cur_val:
+            a_list[cur_pos] = a_list[cur_pos-1]
+            cur_pos = cur_pos - 1
+        a_list[cur_pos] = cur_val
+
+# 希尔排序
