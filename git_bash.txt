@@ -37,3 +37,12 @@ git commit -m “注释”
 
 7、push命令
 git push
+
+8、检查您的文件状态
+git status
+
+9、删除文件
+git rm
+
+10、文件移动
+git rm
