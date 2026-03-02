@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1740933562 source:f:\st\st_git\cproject\c_progaram_demo\main.c
+	<stdio.h>
+	<stdlib.h>
+
